@@ -6,12 +6,12 @@ get "/" do
   erb :index
 end
 
-# Aboutページ
-get "/about" do
-  erb :about
+# 一覧画面
+get "/list" do
+  erb :list
 end
 
-# Contactページ
-get "/contact" do
-  erb :contact
+# 検索画面
+get "/search" do
+  erb :search
 end

@@ -1,18 +1,229 @@
+@charset "UTF-8";
+
+/* Template & Designed by Towako. */
+/* https://ninawas.me */
+
+/* ウェブフォントの読み込み */
+@font-face {
+    font-family: 'しねきゃぷしょん';
+    font-display: swap;
+    src: url('https://cdn.leafscape.be/cinecaption/cinecaption227.woff2') format("woff2");
+}
+
+/* 全体に適用する */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: 'メイリオ', Meiryo, 'Meiryo UI', 'ヒラギノ角ゴシック', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+}
+
+/* 基本設定 */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
-  margin: 20px;
+    background-color: #f8b500;
+    text-align: center;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    color: #000;
 }
 
-h1 {
-  color: #333;
+/* リンク */
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #17184b;
 }
 
-nav a {
-  text-decoration: none;
-  color: #0066cc;
+/* ヘッダー */
+header {
+    padding: 25vh 2em 1em;
+    text-align: left;
 }
 
-nav a:hover {
-  text-decoration: underline;
+header h1 {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    transform: rotate(-5deg);
+    letter-spacing: 0.3em;
+    font-family: 'しねきゃぷしょん', sans-serif;
+    font-size: 2em;
+    color: #17184b;
+}
+
+header h1 span {
+    font-family: 'しねきゃぷしょん', sans-serif;
+    color: #17184b;
+}
+
+header h1 span.line {
+    position: relative;
+}
+
+header h1 span.line::before,
+header h1 span.line::after {
+    position: absolute;
+    display: block;
+    content: '';
+    right: 0;
+}
+
+header h1 span.line::before {
+    bottom: -8px;
+    width: 0px;
+    height: 0px;
+    border: 16px solid transparent;
+    border-right: 16px solid #f8b500;
+    border-bottom: 16px solid #f8b500;
+}
+
+header h1 span.line::after {
+    bottom: 0px;
+    transform: rotate(-45deg);
+    width: 42px;
+    height: 2px;
+    background-color: #17184b;
+}
+
+header nav {
+    text-align: right;
+}
+
+/* メインコンテンツ */
+main {
+    padding: 2em;
+    background-color: #17184b;
+    text-align: justify;
+    word-break: break-all;
+    color: #fff;
+}
+
+main section {
+    margin-bottom: 1.5em;
+}
+
+main section h2 {
+    margin-bottom: 0.5em;
+    padding-left: 5px;
+    border-left: 5px solid #fff;
+    font-size: 1.2em;
+    font-family: 'しねきゃぷしょん', sans-serif;
+}
+
+main section ol,
+main section ul {
+    list-style-position: inside;
+}
+
+main section ol {
+    list-style-type: decimal-leading-zero;
+}
+
+main section li {
+    margin: 0.2em auto;
+}
+
+main section a {
+    color: #f8b500;
+}
+
+/* フッター */
+footer {
+    margin: 1em auto 1.5em;
+}
+
+/* アーティクル */
+article {
+    margin: 3em auto;
+    padding: 3em;
+    max-width: 600px;
+    text-align: justify;
+    word-break: break-all;
+    background-color: #fff;
+}
+
+/* アーティクル見出し */
+article h1 {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: 'しねきゃぷしょん', sans-serif;
+}
+
+/* メニュー */
+.menu {
+    text-align: center;
+    margin: 1em auto 1.5em;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+.menu li a {
+    font-weight: bold;
+}
+
+
+/* フォーム系 */
+textarea,
+input[type] {
+    -webkit-appearance: none;
+    padding: 0.2em 0.5em;
+    background-color: #f8b500;
+    border: none;
+    border-bottom: thin solid #fff;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 200px;
+    height: 70px;
+}
+
+input[type=text] {
+    width: 80px;
+}
+
+input[type=submit] {
+    width: auto;
+    background-color: #17184b;
+    color: #fff;
+}
+
+/* 横幅768px以上で読み込む */
+@media screen and (min-width:768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header,
+    main {
+        padding-right: 20%;
+        padding-left: 20%;
+    }
+
+    main section ol,
+    main section ul {
+        columns: auto 2;
+    }
+}
+
+/* 横幅1024px以上で読み込む */
+@media screen and (min-width:1024px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* 横幅1440px以上で読み込む */
+@media screen and (min-width:1440px) {
+
+    header,
+    main {
+        padding-right: 30%;
+        padding-left: 30%;
+    }
+
 }

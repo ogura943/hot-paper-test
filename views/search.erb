@@ -11,5 +11,20 @@
     <a href="/">Home</a> | <a href="/list">List</a> | <a href="/search">Search</a>
   </nav>
   <p>Email: example@example.com</p>
+  <h1>ホットペッパー店舗検索</h1>
+  <form action="/search" method="get">
+    <input type="text" name="keyword" placeholder="キーワード" value="<%= params['keyword'] %>" />
+    <button type="submit">検索</button>
+  </form>
+
+  <% if @results && @results["results"] && @results["results"]["shop"] %>
+    <ul>
+      <% @results["results"]["shop"].each do |shop| %>
+        <li><%= shop["name"] %> - <%= shop["address"] %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>該当店舗が見つかりませんでした。</p>
+  <% end %>
 </body>
 </html>
